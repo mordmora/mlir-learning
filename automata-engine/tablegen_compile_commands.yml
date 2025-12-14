@@ -1,0 +1,5 @@
+---
+!tablegen_compile_command
+filepath: ".*\\.td"
+dir: "C:/Dev/mlir-learning/automata-engine"
+args: "-I C:/Dev/llvm-project/mlir/include -I C:/Dev/llvm-project/llvm/include -I C:/Dev/mlir-learning/automata-engine/include"
