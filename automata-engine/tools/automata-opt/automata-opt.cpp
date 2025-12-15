@@ -3,6 +3,7 @@
 #include "mlir/InitAllPasses.h"
 #include "mlir/Tools/mlir-opt/MlirOptMain.h"
 #include "automata/AutomataDialect.h"
+#include "automata/AutomataPass.h"
 
 int main(int argc, char** argv){
 
@@ -10,6 +11,8 @@ int main(int argc, char** argv){
     mlir::registerAllDialects(reg);
 
     reg.insert<mlir::automata::AutomataDialect>();
+
+    mlir::automata::registerAutomataPasses();
 
     return mlir::asMainReturnCode(
         mlir::MlirOptMain(argc, argv, "automata engine opt", reg)

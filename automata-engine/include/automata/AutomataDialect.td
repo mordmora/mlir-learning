@@ -24,6 +24,8 @@ def CellUpdateOp : Automata_Op<"cell_update", [Pure]> {
         and return the new state based on rules.
     }]; 
 
+    let hasCanonicalizer = 1;
+
     let arguments = (ins I32:$mid, I32:$left, I32:$up, I32:$right, I32:$down);
     let results = (outs I32:$new_val);
     let assemblyFormat = [{
