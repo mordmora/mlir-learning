@@ -9,7 +9,6 @@
 using namespace mlir;
 using namespace mlir::automata;
 
-
 #include "automata/AutomataDialect.cpp.inc"
 
 #define GET_OP_CLASSES
