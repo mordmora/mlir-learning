@@ -12,7 +12,7 @@ using namespace mlir::automata;
 #include "automata/AutomataDialect.cpp.inc"
 
 #define GET_OP_CLASSES
-#include "automata/AutomataOpsImpl.inc"
+#include "automata/AutomataOps.cpp.inc"
 
 
 struct SimplifyDeadCells : OpRewritePattern<CellUpdateOp> {
@@ -45,7 +45,7 @@ struct SimplifyDeadCells : OpRewritePattern<CellUpdateOp> {
 void AutomataDialect::initialize() {
     addOperations<
         #define GET_OP_LIST
-        #include "automata/AutomataOpsImpl.inc"
+        #include "automata/AutomataOps.cpp.inc"
     >();
 }
 

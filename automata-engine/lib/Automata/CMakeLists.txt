@@ -12,4 +12,6 @@ add_mlir_library(AutomataLib
   MLIRArithDialect
   MLIRPass
   MLIRTransforms
+  MLIRSCFDialect    
+  MLIRMemRefDialect
 )

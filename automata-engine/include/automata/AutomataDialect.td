@@ -2,6 +2,7 @@
 include "mlir/IR/OpBase.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 
+
 def Automata_Dialect : Dialect {
 
     let name = "automata";
@@ -31,6 +32,18 @@ def CellUpdateOp : Automata_Op<"cell_update", [Pure]> {
     let assemblyFormat = [{
         `(` operands `)` attr-dict `:` functional-type(operands, results)
     }];
+}
 
+def EvolveOp : Automata_Op<"evolve"> {
+
+    let summary = "calculate the next matrix step.";
+    let description = [{
+        "Take a complete matrix, traverse it, and calculate the next step."
+    }];
+    let arguments = (ins MemRefOf<[I32]>:$in_array, MemRefOf<[I32]>:$out_array);
+
+    let assemblyFormat = [{
+        `(` operands `)` attr-dict `:` type(operands)
+    }];
 
 }
